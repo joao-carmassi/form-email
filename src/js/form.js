@@ -29,7 +29,7 @@ export const form = {
     if (res.text === "OK") {
       modal.innerHTML = `
       <h3 class="text-lg font-bold">Enviado!</h3>
-      <p class="py-4">Formulario enviado com sucesso</p>
+      <p class="py-4">Formulario enviado com sucesso.</p>
       <div class="modal-action">
         <form method="dialog">
           <button id="fecharModal" class="btn bg-green-400 text-white hover:bg-green-500">
