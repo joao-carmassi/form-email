@@ -6,6 +6,7 @@ import { tema } from "./tema.js";
 // Dooms -----
 const formulario = document.getElementById("formDados");
 const btnLimpaForm = document.getElementById("limpaForm");
+const getStarted = document.getElementById("getStarted");
 
 // Funcoes -----
 document.addEventListener("DOMContentLoaded", tema.aplicaTema);
@@ -20,4 +21,8 @@ formulario.addEventListener("submit", async (e) => {
 
 btnLimpaForm.addEventListener("click", () => {
   form.limpaDadosForm();
+});
+
+getStarted.addEventListener("click", () => {
+  formulario.scrollIntoView({ block: "center", behavior: "smooth" });
 });

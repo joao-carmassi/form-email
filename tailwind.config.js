@@ -3,7 +3,11 @@ module.exports = {
   content: ["./src/**/*.{html,js}"],
   theme: {
     extend: {
-      colors: {},
+      colors: {
+        colors: {
+          grape: "var(--fundo-forte)",
+        },
+      },
       animation: {},
       keyframes: {},
     },
