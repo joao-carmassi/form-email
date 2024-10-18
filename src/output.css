@@ -2143,10 +2143,6 @@ html {
   font-weight: 700;
 }
 
-.italic {
-  font-style: italic;
-}
-
 .text-neutral-content {
   --tw-text-opacity: 1;
   color: var(--fallback-nc,oklch(var(--nc)/var(--tw-text-opacity)));
