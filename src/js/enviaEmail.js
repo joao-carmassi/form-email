@@ -8,24 +8,22 @@ const templateId = "template_h4mv287";
 // Functions
 export const email = {
   enviaForm(user) {
-    emailjs.init("pGFpLQJZ0x81EnJDS");
-    return emailjs
-      .send(serviceId, templateId, user)
-      .then((res) => {
-        if (!res.ok) {
-          throw new Error(`${res.status} - ${res.statusText}`);
-        }
-        console.log(res);
-        return res.json();
-      })
-      .then((data) => {
-        console.log(data);
-        return data;
-      })
-      .catch((error) => {
-        this.enviaMsgDeErro(error);
-        console.error(`Erro ao enviar o formulario. ${error}`);
-      });
+    return new Promise((resolve, reject) => {
+      emailjs.init("pGFpLQJZ0x81EnJDS");
+      emailjs
+        .send(serviceId, templateId, user)
+        .then((res) => {
+          if (!res.text === "OK") {
+            throw new Error(`${res.status} - ${res.text}`);
+          }
+          resolve(res);
+        })
+        .catch((err) => {
+          this.enviaMsgDeErro(err);
+          console.error(err);
+          reject(err);
+        });
+    });
   },
   enviaMsgDeErro(error) {
     modal.innerHTML = `

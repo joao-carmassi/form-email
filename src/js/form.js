@@ -26,7 +26,7 @@ export const form = {
   },
 
   exibeMsgEnviado(res) {
-    if (res.success === "true") {
+    if (res.text === "OK") {
       modal.innerHTML = `
       <h3 class="text-lg font-bold">Enviado!</h3>
       <p class="py-4">Formulario enviado com sucesso</p>
