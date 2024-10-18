@@ -2,7 +2,7 @@
 const modal = document.getElementById("modalEnviado");
 
 // Vars
-const URL_API = "https://formsubmit.co/ajax/joaovitorcarmassi@gmail.com";
+const URL_API = "https://formsubmit.co/ajax/f121f686b321b93026e8da3fb436b459";
 
 // Functions
 export const email = {
