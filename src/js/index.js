@@ -1,12 +1,15 @@
-// Imports
+// Imports -----
 import { form } from "./form.js";
 import { email } from "./enviaEmail.js";
+import { tema } from "./tema.js";
 
-// Dooms
+// Dooms -----
 const formulario = document.getElementById("formDados");
 const btnLimpaForm = document.getElementById("limpaForm");
 
-// Funcoes
+// Funcoes -----
+document.addEventListener("DOMContentLoaded", tema.aplicaTema);
+
 formulario.addEventListener("submit", async (e) => {
   e.preventDefault();
   const user = form.salvaDados(e);

@@ -17,7 +17,7 @@ export const form = {
     return user;
   },
 
-  limpaDados() {
+  limpaDadosForm() {
     formulario.reset();
   },
 
@@ -45,7 +45,7 @@ export const form = {
   resetaModalForm(modal) {
     const btnFecharModal = document.getElementById("fecharModal");
     btnFecharModal.addEventListener("click", () => {
-      this.limpaDados();
+      this.limpaDadosForm();
 
       containerModal.close();
 
