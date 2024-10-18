@@ -19,5 +19,5 @@ formulario.addEventListener("submit", async (e) => {
 });
 
 btnLimpaForm.addEventListener("click", () => {
-  form.limpaDados();
+  form.limpaDadosForm();
 });
