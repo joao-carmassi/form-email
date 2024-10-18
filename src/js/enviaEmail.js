@@ -45,15 +45,3 @@ export const email = {
     `;
   },
 };
-
-// emailjs.init("pGFpLQJZ0x81EnJDS");
-// var serviceId = "service_pgemm5o";
-// var templateId = "template_h4mv287";
-// emailjs
-//   .send(serviceId, templateId, user)
-//   .then((res) => {
-//     console.log(res.text);
-//   })
-//   .catch((err) => {
-//     console.error(err);
-//   });
