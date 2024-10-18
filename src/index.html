@@ -5,12 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="./output.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
     <script type="module" src="./js/index.js"></script>
     <link rel="shortcut icon" href="./icon.svg" type="image/x-icon" />
     <title>Easy stay</title>
   </head>
   <body>
-    <header class="bg-colors-grape fixed top-0 w-full z-50">
+    <header class="bg-colors-fundo fixed top-0 w-full z-50">
       <div class="navbar justify-between top-0">
         <a class="btn btn-ghost text-xl" href="index.html">Easy stay</a>
         <label class="swap swap-rotaten pr-3">
@@ -38,7 +40,7 @@
     </header>
     <main>
       <section
-        class="hero min-h-svh"
+        class="hero min-h-svh shadow-[0px_0px_50em_#000000_inset] w-full h-full"
         style="
           background-image: url(https://lh4.googleusercontent.com/proxy/diGUDbs77nYpkDLmfq3ROLcIs6qS3cvOuZcv0rHuAWPrX6OqVN_OCij7YZr6BRzN8FmNIeZFX0aFkAdCQNpSgP3Fhusqd5vTFkWWdqoPtR__aV5c5uT_P8OIp9yNLA);
         "
@@ -46,12 +48,17 @@
         <div class="hero-overlay bg-opacity-60"></div>
         <div class="hero-content text-neutral-content text-center">
           <div class="max-w-md">
-            <h1 class="mb-5 text-5xl font-bold">Easy stay</h1>
-            <p class="mb-5">
+            <h1 class="mb-5 text-5xl font-bold animate-fade-in">Easy stay</h1>
+            <p class="mb-5 animate-fade-in delay-200">
               Aumente a Rentabilidade do Seu Imóvel com uma Gestão Completa e
               Sem Preocupações
             </p>
-            <button id="getStarted" class="btn btn-primary">Get Started</button>
+            <button
+              id="getStarted"
+              class="btn animate-fade-in delay-500 btn-primary"
+            >
+              Get Started
+            </button>
           </div>
         </div>
       </section>
@@ -59,9 +66,9 @@
         <div class="hero lg:w-3/4 min-h-screen">
           <div class="hero-content flex-col lg:flex-row-reverse">
             <div
-              class="text-center animate-in fade-in-0 slide-in-from-top-32 duration-1000 pt-7 lg:p-0 w-3/4 lg:ml-20 lg:w-1/4"
+              class="animationsScroll text-center pt-7 lg:p-0 w-3/4 lg:ml-20 lg:w-1/4"
             >
-              <h1 class="text-5xl font-bold">Easy stay</h1>
+              <h1 class="text-5xl font-bold">Entre em contato</h1>
               <p class="py-6">
                 A EasyStayBR é uma parceira excepcional. Eles resolvem
                 rapidamente qualquer problema dos hóspedes e sempre encontram
@@ -70,7 +77,7 @@
               </p>
             </div>
             <div
-              class="card animate-in fade-in zoom-in-125 duration-1000 bg-base-100 w-full max-w-sm shrink-0 shadow-2xl"
+              class="animationsScroll card animate-in bg-base-100 w-full max-w-sm shrink-0 shadow-2xl"
             >
               <form class="card-body" id="formDados">
                 <div class="form-control">

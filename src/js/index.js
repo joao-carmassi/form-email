@@ -2,6 +2,7 @@
 import { form } from "./form.js";
 import { email } from "./enviaEmail.js";
 import { tema } from "./tema.js";
+import { animacao } from "./animacaoScroll.js";
 
 // Dooms -----
 const formulario = document.getElementById("formDados");
@@ -9,7 +10,10 @@ const btnLimpaForm = document.getElementById("limpaForm");
 const getStarted = document.getElementById("getStarted");
 
 // Funcoes -----
-document.addEventListener("DOMContentLoaded", tema.aplicaTema);
+document.addEventListener("DOMContentLoaded", () => {
+  tema.aplicaTema();
+  animacao.aplicaAnimacao();
+});
 
 formulario.addEventListener("submit", async (e) => {
   e.preventDefault();

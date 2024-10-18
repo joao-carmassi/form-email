@@ -5,11 +5,18 @@ module.exports = {
     extend: {
       colors: {
         colors: {
-          grape: "var(--fundo-forte)",
+          fundo: "var(--fundo-forte)",
         },
       },
-      animation: {},
-      keyframes: {},
+      animation: {
+        "fade-in": "fade-in .3s ease-out both",
+      },
+      keyframes: {
+        "fade-in": {
+          from: { transform: "translateX(-50px)", opacity: 0 },
+        },
+        to: { transform: "translateX(0px)", opacity: 1 },
+      },
     },
   },
   plugins: [require("tailwindcss-animate"), require("daisyui")],

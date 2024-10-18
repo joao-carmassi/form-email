@@ -2,31 +2,24 @@
 const modal = document.getElementById("modalEnviado");
 
 // Vars
-const URL_API = "https://formsubmit.co/ajax/f121f686b321b93026e8da3fb436b459";
+const serviceId = "service_pgemm5o";
+const templateId = "template_h4mv287";
 
 // Functions
 export const email = {
   enviaForm(user) {
-    return fetch(URL_API, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-      body: JSON.stringify({
-        Nome: `${user.nome}`,
-        Email: `${user.email}`,
-        Whatsapp: `${user.numero}`,
-        Cidade: `${user.cidade}`,
-      }),
-    })
+    emailjs.init("pGFpLQJZ0x81EnJDS");
+    return emailjs
+      .send(serviceId, templateId, user)
       .then((res) => {
         if (!res.ok) {
           throw new Error(`${res.status} - ${res.statusText}`);
         }
+        console.log(res);
         return res.json();
       })
       .then((data) => {
+        console.log(data);
         return data;
       })
       .catch((error) => {
@@ -52,3 +45,15 @@ export const email = {
     `;
   },
 };
+
+// emailjs.init("pGFpLQJZ0x81EnJDS");
+// var serviceId = "service_pgemm5o";
+// var templateId = "template_h4mv287";
+// emailjs
+//   .send(serviceId, templateId, user)
+//   .then((res) => {
+//     console.log(res.text);
+//   })
+//   .catch((err) => {
+//     console.error(err);
+//   });

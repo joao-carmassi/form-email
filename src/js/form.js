@@ -12,7 +12,7 @@ export const form = {
       nome: nome,
       email: email,
       numero: numero,
-      cidade,
+      cidade: cidade,
     };
     return user;
   },
