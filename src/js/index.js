@@ -17,9 +17,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
 formulario.addEventListener("submit", async (e) => {
   e.preventDefault();
-  const user = form.salvaDados(e);
+  const data = form.salvaDados(e);
   form.exibeIconiCarregando();
-  const res = await email.enviaForm(user);
+  const res = await email.enviaForm(data);
   form.exibeMsgEnviado(res);
 });
 

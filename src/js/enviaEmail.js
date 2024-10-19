@@ -1,29 +1,28 @@
 // Dooms
 const modal = document.getElementById("modalEnviado");
 
-// Vars
-const serviceId = "service_pgemm5o";
-const templateId = "template_h4mv287";
-
 // Functions
 export const email = {
-  enviaForm(user) {
-    return new Promise((resolve, reject) => {
-      emailjs.init("pGFpLQJZ0x81EnJDS");
-      emailjs
-        .send(serviceId, templateId, user)
-        .then((res) => {
-          if (!res.text === "OK") {
-            throw new Error(`${res.status} - ${res.text}`);
-          }
-          resolve(res);
-        })
-        .catch((err) => {
-          this.enviaMsgDeErro(err);
-          console.error(err);
-          reject(err);
-        });
-    });
+  enviaForm(data) {
+    return fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error(`${res.status} - ${res.statusText}`);
+        }
+        return res;
+      })
+      .catch((err) => {
+        console.error(`Erro ao enviar formulario. ${err}`);
+        this.enviaMsgDeErro(err);
+        return err;
+      });
   },
   enviaMsgDeErro(error) {
     modal.innerHTML = `
