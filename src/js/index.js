@@ -1,6 +1,5 @@
 // Imports -----
 import { form } from "./form.js";
-import { email } from "./enviaEmail.js";
 import { tema } from "./tema.js";
 import { animacao } from "./animacaoScroll.js";
 
@@ -19,7 +18,7 @@ formulario.addEventListener("submit", async (e) => {
   e.preventDefault();
   const data = form.salvaDados(e);
   form.exibeIconiCarregando();
-  const res = await email.enviaForm(data);
+  const res = await form.enviaForm(data);
   form.exibeMsgEnviado(res);
 });
 
