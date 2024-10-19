@@ -18,8 +18,7 @@ formulario.addEventListener("submit", async (e) => {
   e.preventDefault();
   const data = form.salvaDados(e);
   form.exibeIconiCarregando();
-  const res = await form.enviaForm(data);
-  form.exibeMsgEnviado(res);
+  form.enviaForm(data);
 });
 
 btnLimpaForm.addEventListener("click", () => {
