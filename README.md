@@ -1,1 +1,1 @@
-https://joao-carmassi.github.io/formEmail/src/index.html
+https://joao-carmassi.github.io/form-email/src/index.html
